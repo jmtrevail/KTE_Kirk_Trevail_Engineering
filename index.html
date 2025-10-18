@@ -1,149 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KTE | Kirk Trevail Engineering</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; font-family: Arial, Helvetica, sans-serif; }
-    body { color: #333; background-color: #fff; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-    header { position: fixed; top: 0; left: 0; width: 100%; background: #111; color: #fff; padding: 15px 0; z-index: 1000; }
-    .container { width: 90%; max-width: 1100px; margin: auto; }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    nav h1 { font-size: 1.5em; letter-spacing: 2px; }
-    nav ul { list-style: none; display: flex; gap: 20px; }
-    nav ul li a { color: #fff; transition: color 0.3s; }
-    nav ul li a:hover { color: #00bcd4; }
-    #hero { height: 100vh; background-image: url('https://images.unsplash.com/photo-1506765515384-028b60a970df?q=80&w=1600&auto=format&fit=crop');
-    #hero { height: 100vh; background: linear-gradient(to right, #00bcd4, #007b9e); display: flex; align-items: center; justify-content: center; color: white; text-align: center; padding: 0 20px; }
-    #hero h2 { font-size: 2.5em; margin-bottom: 10px; }
-    #hero p { font-size: 1.1em; margin-bottom: 20px; }
-    #hero a { background: #fff; color: #007b9e; padding: 10px 20px; border-radius: 25px; font-weight: bold; transition: 0.3s; }
-    #hero a:hover { background: #007b9e; color: #fff; }
-    section { padding: 80px 0; }
-    h2.section-title { text-align: center; margin-bottom: 40px; font-size: 2em; color: #007b9e; }
-    #about h2.section-title { font-size: 22px; }
-    #about p { max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1em; }
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
-    .service { background: #f5f5f5; padding: 20px; border-radius: 10px; transition: 0.3s; }
-    .service:hover { background: #e0f7fa; }
-    .bios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
-    .bio { background: #f5f5f5; padding: 20px; border-radius: 10px; }
-    .bio img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; }
-    #contact form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-    #contact input, #contact textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; }
-    #contact button { padding: 10px; background: #007b9e; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; transition: 0.3s; }
-    #contact button:hover { background: #00bcd4; }
-    footer { background: #111; color: #fff; text-align: center; padding: 20px; font-size: 0.9em; }
-    @media (max-width: 768px) { nav ul { display: none; } }
-    /* small list styling for added sections */
-    #services-list ul, #accreditation ul { max-width: 800px; margin: 0 auto; list-style: disc; padding-left: 20px; font-size: 1.05em; }
-    #services-list li, #accreditation li { margin: 8px 0; }
-    /* prevent header overlap for anchor links */
-    section { scroll-margin-top: 90px; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>KTE | Kirk Trevail Engineering</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; font-family: Arial, Helvetica, sans-serif; }
+body { color: #333; background-color: #fff; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+header { position: fixed; top: 0; left: 0; width: 100%; background: #111; color: #fff; padding: 15px 0; z-index: 1000; }
+.container { width: 90%; max-width: 1100px; margin: auto; }
+nav { display: flex; justify-content: space-between; align-items: center; }
+nav h1 { font-size: 1.5em; letter-spacing: 2px; }
+nav ul { list-style: none; display: flex; gap: 20px; }
+nav ul li a { color: #fff; transition: color 0.3s; }
+nav ul li a:hover { color: #00bcd4; }
+#hero { height: 100vh; background: linear-gradient(to right, #00bcd4, #007b9e); display: flex; align-items: center; justify-content: center; color: white; text-align: center; padding: 0 20px; }
+#hero h2 { font-size: 2.5em; margin-bottom: 10px; }
+#hero p { font-size: 1.1em; margin-bottom: 20px; }
+#hero a { background: #fff; color: #007b9e; padding: 10px 20px; border-radius: 25px; font-weight: bold; transition: 0.3s; }
+#hero a:hover { background: #007b9e; color: #fff; }
+section { padding: 80px 0; }
+h2.section-title { text-align: center; margin-bottom: 40px; font-size: 2em; color: #007b9e; }
+#about p { max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1em; }
+.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
+.service { background: #f5f5f5; padding: 20px; border-radius: 10px; transition: 0.3s; }
+.service:hover { background: #e0f7fa; }
+.bios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
+.bio { background: #f5f5f5; padding: 20px; border-radius: 10px; }
+.bio img { width: 100px; height: 100px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; }
+#contact form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+#contact input, #contact textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; }
+#contact button { padding: 10px; background: #007b9e; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; transition: 0.3s; }
+#contact button:hover { background: #00bcd4; }
+footer { background: #111; color: #fff; text-align: center; padding: 20px; font-size: 0.9em; }
+@media (max-width: 768px) { nav ul { display: none; } }
+/* small list styling for added sections */
+#services-list ul, #accreditation ul { max-width: 800px; margin: 0 auto; list-style: disc; padding-left: 20px; font-size: 1.05em; }
+#services-list li, #accreditation li { margin: 8px 0; }
+/* prevent header overlap for anchor links */
+section { scroll-margin-top: 90px; }
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <h1>KTE</h1>
-        <ul>
-          <li><a href="#hero">KTE</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#engineering">Engineering</a></li>
-          <li><a href="#bios">Team</a></li>
-          <li><a href="#services-list">Services</a></li>
-          <li><a href="#accreditation">Accreditation</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+<header>
+<div class="container">
+<nav>
+<h1>KTE</h1>
+<ul>
+<li><a href="#hero">KTE</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#engineering">Engineering</a></li>
+<li><a href="#bios">Team</a></li>
+<li><a href="#services-list">Services</a></li>
+<li><a href="#accreditation">Accreditation</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
 
-  <section id="hero">
-    <div>
-      <h2>KTE</h2>
-      <h2>Kirk Trevail Engineering</h2>
-      <p>Engineering services that deliver real-world solutions and provide lasting impact.</p>
-      <a href="#about">Learn More</a>
-    </div>
-  </section>
+<section id="hero">
+<div>
+<h2>KTE</h2>
+<h2>Kirk Trevail Engineering</h2>
+<p>Engineering services that deliver real-world solutions and provide lasting impact.</p>
+<a href="#about">Learn More</a>
+</div>
+</section>
 
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">Energy Storage - Renewables - Hydrogen - Infrastructure - Heavy Lifting - Offshore - Space - Product - Startup support</h2>
-      <p>With expertise in off and on-shore energy, space, construction and product development, we bring a track record of advanced innovation coupled with practical delivery. From feasibility to[...]</p>
-    </div>
-  </section>
+<section id="about">
+<div class="container">
+<h2 class="section-title">Energy Storage - Renewables - Hydrogen - Infrastructure - Heavy Lifting - Offshore - Space - Product - Startup support</h2>
+<p>With expertise in off and on-shore energy, space, construction and product development, we bring a track record of advanced innovation coupled with practical delivery. From feasibility to[...]</p>
+</div>
+</section>
 
-  <section id="engineering">
-    <div class="container">
-      <h2 class="section-title">Engineering</h2>
-      <div class="services">
-        <div class="service"><h3>Consulting</h3><p>Strategic advice to help your business grow efficiently and sustainably.</p></div>
-        <div class="service"><h3>Technology</h3><p>Cutting-edge solutions tailored to meet your unique operational needs.</p></div>
-        <div class="service"><h3>Support</h3><p>Reliable support to ensure continuous success and client satisfaction.</p></div>
-      </div>
-    </div>
-  </section>
+<section id="engineering">
+<div class="container">
+<h2 class="section-title">Engineering</h2>
+<div class="services">
+<div class="service"><h3>Consulting</h3><p>Strategic advice to help your business grow efficiently and sustainably.</p></div>
+<div class="service"><h3>Technology</h3><p>Cutting-edge solutions tailored to meet your unique operational needs.</p></div>
+<div class="service"><h3>Support</h3><p>Reliable support to ensure continuous success and client satisfaction.</p></div>
+</div>
+</div>
+</section>
 
-  <section id="bios">
-    <div class="container">
-      <h2 class="section-title">Meet the Team</h2>
-      <div class="bios">
+<section id="bios">
+<div class="container">
+<h2 class="section-title">Meet the Team</h2>
+<div class="bios">
         <div class="bio"><img src="https://via.placeholder.com/100" alt="Team Member"><h3>Jane Doe</h3><p>CEO & Founder — Passionate about driving innovation and empowering businesses.</p></div>
         <div class="bio"><img src="https://via.placeholder.com/100" alt="Team Member"><h3>John Smith</h3><p>Head of Operations — Ensures every project exceeds client expectations.</p></div>
         <div class="bio"><img src="https://via.placeholder.com/100" alt="Team Member"><h3>Sarah Lee</h3><p>Lead Developer — Expert in crafting efficient, scalable tech solutions.</p></div>
-      </div>
-    </div>
-  </section>
+        <div class="bio"><img src="https://via.placeholder.com/100" alt="Team Member"><h3>Steven Kirk</h3><p>Director — Passionate about driving innovation and empowering businesses.</p></div>
+        <div class="bio"><img src="https://via.placeholder.com/100" alt="Team Member"><h3>Jack Trevail</h3><p>Director — Ensures every project exceeds client expectations.</p></div>
+</div>
+</div>
+</section>
 
-  <section id="services-list">
-    <div class="container">
-      <h2 class="section-title">Services</h2>
-      <ul>
-        <li>Energy Storage</li>
-        <li>Renewables</li>
-        <li>Hydrogen</li>
-        <li>Infrastructure</li>
-        <li>Heavy Lifting</li>
-        <li>Offshore</li>
-        <li>Space</li>
-        <li>Product Development</li>
-        <li>Startup Support</li>
-      </ul>
-    </div>
-  </section>
+<section id="services-list">
+<div class="container">
+<h2 class="section-title">Services</h2>
+<ul>
+<li>Energy Storage</li>
+<li>Renewables</li>
+<li>Hydrogen</li>
+<li>Infrastructure</li>
+<li>Heavy Lifting</li>
+<li>Offshore</li>
+<li>Space</li>
+<li>Product Development</li>
+<li>Startup Support</li>
+</ul>
+</div>
+</section>
 
-  <section id="accreditation">
-    <div class="container">
-      <h2 class="section-title">Accreditation</h2>
-      <ul>
-        <li>ISO 9001 (Quality Management)</li>
-        <li>ISO 14001 (Environmental Management)</li>
-        <li>DNV / Lloyd’s Register — Offshore Certification</li>
-        <li>API / Industry-specific approvals</li>
-        <li>Other industry accreditations — TBD</li>
-      </ul>
-    </div>
-  </section>
+<section id="accreditation">
+<div class="container">
+<h2 class="section-title">Accreditation</h2>
+<ul>
+<li>ISO 9001 (Quality Management)</li>
+<li>ISO 14001 (Environmental Management)</li>
+<li>DNV / Lloyd’s Register — Offshore Certification</li>
+<li>API / Industry-specific approvals</li>
+<li>Other industry accreditations — TBD</li>
+</ul>
+</div>
+</section>
 
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Get in Touch</h2>
-      <form>
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
-  </section>
+<section id="contact">
+<div class="container">
+<h2 class="section-title">Get in Touch</h2>
+<form>
+<input type="text" placeholder="Your Name" required />
+<input type="email" placeholder="Your Email" required />
+<textarea placeholder="Your Message" rows="5" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+</section>
 
-  <footer>
-    <p>&copy; 2025 KTE. All rights reserved.</p>
-  </footer>
+<footer>
+<p>&copy; 2025 KTE. All rights reserved.</p>
+</footer>
 </body>
 </html>
