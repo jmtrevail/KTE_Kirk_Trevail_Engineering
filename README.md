@@ -1,2 +1,0 @@
-# jmtrevail.github.io
-KTE
