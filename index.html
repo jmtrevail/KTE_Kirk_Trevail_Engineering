@@ -35,6 +35,11 @@
     #contact button:hover { background: #00bcd4; }
     footer { background: #111; color: #fff; text-align: center; padding: 20px; font-size: 0.9em; }
     @media (max-width: 768px) { nav ul { display: none; } }
+    /* small list styling for added sections */
+    #services-list ul, #accreditation ul { max-width: 800px; margin: 0 auto; list-style: disc; padding-left: 20px; font-size: 1.05em; }
+    #services-list li, #accreditation li { margin: 8px 0; }
+    /* prevent header overlap for anchor links */
+    section { scroll-margin-top: 90px; }
   </style>
 </head>
 <body>
@@ -45,7 +50,7 @@
         <ul>
           <li><a href="#hero">KTE</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Engineering</a></li>
+          <li><a href="#engineering">Engineering</a></li>
           <li><a href="#bios">Team</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -65,13 +70,13 @@
   <section id="about">
     <div class="container">
       <h2 class="section-title">Energy Storage - Renewables - Hydrogen - Infrastructure - Heavy Lifting - Offshore - Space - Product - Startup support</h2>
-      <p>With expertise in off and on-shore energy, space, construction and product development, we bring a track record of advanced innovation coupled with practical delivery. From feasibility to de-commissioning, we span the full life-cycle of engineering development, to turn ideas and projects into reality.</p>
+      <p>With expertise in off and on-shore energy, space, construction and product development, we bring a track record of advanced innovation coupled with practical delivery. From feasibility to[...]</p>
     </div>
   </section>
 
-  <section id="services">
+  <section id="engineering">
     <div class="container">
-      <h2 class="section-title">Our Services</h2>
+      <h2 class="section-title">Engineering</h2>
       <div class="services">
         <div class="service"><h3>Consulting</h3><p>Strategic advice to help your business grow efficiently and sustainably.</p></div>
         <div class="service"><h3>Technology</h3><p>Cutting-edge solutions tailored to meet your unique operational needs.</p></div>
@@ -88,6 +93,36 @@
         <div class="bio"><img src="https://via.placeholder.com/100" alt="Team Member"><h3>John Smith</h3><p>Head of Operations — Ensures every project exceeds client expectations.</p></div>
         <div class="bio"><img src="https://via.placeholder.com/100" alt="Team Member"><h3>Sarah Lee</h3><p>Lead Developer — Expert in crafting efficient, scalable tech solutions.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section id="services-list">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <ul>
+        <li>Energy Storage</li>
+        <li>Renewables</li>
+        <li>Hydrogen</li>
+        <li>Infrastructure</li>
+        <li>Heavy Lifting</li>
+        <li>Offshore</li>
+        <li>Space</li>
+        <li>Product Development</li>
+        <li>Startup Support</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="accreditation">
+    <div class="container">
+      <h2 class="section-title">Accreditation</h2>
+      <ul>
+        <li>ISO 9001 (Quality Management)</li>
+        <li>ISO 14001 (Environmental Management)</li>
+        <li>DNV / Lloyd’s Register — Offshore Certification</li>
+        <li>API / Industry-specific approvals</li>
+        <li>Other industry accreditations — TBD</li>
+      </ul>
     </div>
   </section>
 
