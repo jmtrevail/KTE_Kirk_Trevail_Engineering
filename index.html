@@ -8,7 +8,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; font-family: Arial, Helvetica, sans-serif; }
 body { color: #333; background-color: #fff; line-height: 1.6; }
 a { text-decoration: none; color: inherit; }
-header { position: fixed; top: 0; left: 0; width: 100%; background: #111; color: #fff; padding: 15px 0; z-index: 1000; }
+header { position: fixed; top: 0; left: 0; width: 100%; background: #010B14; color: #fff; padding: 15px 0; z-index: 1000; }
 .container { width: 90%; max-width: 1100px; margin: auto; }
 nav { display: flex; justify-content: space-between; align-items: center; }
 nav h1 { font-size: 1.5em; letter-spacing: 2px; }
@@ -31,7 +31,7 @@ nav ul li a:hover { color: #00bcd4; }
   position: relative;
   z-index: 2;
 }
-#hero h2 { font-size: 3em; margin-bottom: 350px; } /* space between heading and paragraph */
+#hero h2 { font-size: 3em; margin-bottom: 30px; } /* space between heading and paragraph */
 #hero p { font-size: 1.8em; margin-bottom: 50px; } /* space below paragraph before button */
 #hero a { background: #fff; color: #A37A74; padding: 10px 20px; border-radius: 25px; font-weight: bold; transition: 0.3s; }
 #hero a:hover { background: #007b9e; color: #fff; }
@@ -45,7 +45,7 @@ h2.section-title { text-align: center; margin-bottom: 40px; font-size: 2em; colo
 .bio { background: #f5f5f5; padding: 20px; border-radius: 10px; }
 .bio img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: center 35%; margin-bottom: 15px; }
 #contact {
-  background-color: #f9f9f9;  /* or whatever color you’ve chosen */
+  background-color: #C6CCB2;  /* or whatever color you’ve chosen */
   text-align: center;         /* centers all text and buttons */
   padding: 80px 20px;
 }
@@ -63,7 +63,7 @@ h2.section-title { text-align: center; margin-bottom: 40px; font-size: 2em; colo
 .email-button:hover {
   background-color: #009cb3;
 }
-footer { background: #111; color: #fff; text-align: center; padding: 20px; font-size: 0.9em; }
+footer { background: #010B14; color: #fff; text-align: center; padding: 20px; font-size: 0.9em; }
 @media (max-width: 768px) { nav ul { display: none; } }
 /* small list styling for added sections */
 #services-list ul, #accreditation ul { max-width: 800px; margin: 0 auto; list-style: disc; padding-left: 20px; font-size: 1.05em; }
@@ -110,7 +110,7 @@ section {
   justify-content: center; /* vertical centering */
   text-align: center;      /* center the text inside its box */
   padding: 40px;           /* optional spacing inside text box */
-  background: #f5f5f5;     /* optional background to differentiate text */
+  background: #C6CCB2;     /* optional background to differentiate text */
 }
 
 /* Responsive adjustments */
@@ -126,7 +126,7 @@ section {
 
 /* SERVICES section */
 #service-list {
-  background-color: #f5f5f5; 
+  background-color: #C6CCB2; 
   padding: 80px 20px;
   text-align: left; /* keep text left-aligned */
 }
@@ -179,7 +179,7 @@ section {
   width: 40px;
   height: 40px;
   margin-top: 20px;
-  filter: invert(41%) sepia(98%) saturate(2774%) hue-rotate(184deg) brightness(94%) contrast(101%);
+  filter: brightness(0) invert(1);  /* makes the icon white */
   transition: transform 0.3s ease;
 }
 
