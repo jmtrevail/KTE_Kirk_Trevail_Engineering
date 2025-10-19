@@ -84,49 +84,43 @@ section {
 
 .engineering-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* equal column widths */
-  gap: 40px;
-  align-items: center;
-  padding: 80px 20px;
+  grid-template-columns: 1fr 1fr; /* equal width columns */
+  gap: 0; /* no horizontal gap if you want images touching text */
+  align-items: stretch; /* stretch children to full height */
+  padding: 0; /* remove default padding for full-height effect */
 }
 
 .engineering-grid .engineering-image {
   display: flex;
-  justify-content: center; /* center image horizontally in column */
+  flex-direction: column;
+  justify-content: stretch;
+  height: 100%; /* stretch to full height of grid row */
 }
 
 .engineering-grid .engineering-image img {
-  width: 80%; 
-  border-radius: 10px;
-  object-fit: cover;
+  width: 100%;      /* fill the column width */
+  height: 100%;     /* fill the column height */
+  object-fit: cover; /* crop to fill without distortion */
+  border-radius: 0;  /* remove rounded edges */
 }
 
 .engineering-grid .engineering-text {
-  text-align: center; /* center the text */
   display: flex;
   flex-direction: column;
   justify-content: center; /* vertical centering */
-}
-
-.engineering-text h3 {
-  margin-bottom: 10px;
-  color: #007b9e;
-}
-
-.engineering-text p {
-  font-size: 1.1em;
-  line-height: 1.6;
+  text-align: center;      /* center the text inside its box */
+  padding: 40px;           /* optional spacing inside text box */
+  background: #f5f5f5;     /* optional background to differentiate text */
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .engineering-grid {
-    grid-template-columns: 1fr; /* stack columns on small screens */
-    gap: 30px;
+    grid-template-columns: 1fr; /* stack vertically on mobile */
   }
   .engineering-grid .engineering-image,
   .engineering-grid .engineering-text {
-    text-align: center;
+    height: auto; /* remove fixed height on stacked layout */
   }
 }
 
