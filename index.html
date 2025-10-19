@@ -88,7 +88,9 @@ section {
   grid-template-columns: 1fr 1fr; /* equal width columns */
   gap: 0; /* no horizontal gap if you want images touching text */
   align-items: stretch; /* stretch children to full height */
-  padding: 0; /* remove default padding for full-height effect */
+  padding: 40px;          /* optional padding inside grid */
+  border-radius: 20px;    /* softens the corners */
+  overflow: hidden;       /* ensures images respect the rounded corners */
 }
 
 .engineering-grid .engineering-image {
