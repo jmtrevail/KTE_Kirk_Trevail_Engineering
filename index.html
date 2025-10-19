@@ -223,26 +223,60 @@ h2.section-title {
 #services-accreditation {
   background-color: #f5f5f5;
   padding: 80px 20px;
-  width: 100%;
   text-align: center;
 }
 
-#services-accreditation ul {
-  list-style: none;
-  padding: 0;
-  margin: 40px auto;
-  max-width: 900px;
-  column-count: 2;         /* ✅ Split into 2 columns */
-  column-gap: 60px;        /* space between columns */
-  text-align: left;        /* aligns list items neatly */
+/* Two-column layout */
+.services-columns {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-bottom: 50px;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
 }
 
-#services-accreditation li {
-  margin-bottom: 12px;
+.services-columns ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.services-columns li {
   font-size: 1.1em;
   line-height: 1.6;
-  break-inside: avoid;     /* ✅ keeps list items together if they wrap */
+  margin-bottom: 12px;
+  white-space: nowrap; /* prevents wrapping onto two lines */
 }
+
+/* Single-column accreditations list */
+.accreditations {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 600px;
+  text-align: center;
+}
+
+.accreditations li {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* Responsive tweak for mobile */
+@media (max-width: 768px) {
+  .services-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .services-columns ul {
+    text-align: center;
+  }
+}
+
 
 /* CONTACT SECTION */
 #contact {
@@ -377,34 +411,45 @@ footer {
 </section>
 
 <section id="services-accreditation">
-<div class="container">
-<h2 class="section-title">Services & Accreditation</h2>
-<ul>
-  <li>Engineering design - Mech, structural, systems</li>
-  <li>Calculations</li>
-  <li>Systems modeling & data analysis</li>
-  <li>3D modeling</li>
-  <li>Drafting</li>
-  <li>FEA Linear and non-linear</li>
-  <li>Risk analysis and management</li>
-  <li>Assembly and installation planning and support</li>
-  <li>Certification support</li>
-  <li>Commissioning</li>
-  <li>Design validation</li>
-  <li>Prototype and build support</li>
-  <li>Design for Manufacture</li>
-  <li>Due diligence support</li>
-  <li>Test method development</li>
-  <li>Cost modeling</li>
-  <li>Grant application support</li>
-  <li>Technology roadmapping and engineering strategy</li>
-  <li style="margin-bottom:50px;">IP Management</li>
-  <li>2x Chartered Engineers with 20+ years of experience</li>
-  <li>Hydrogen Energy Consultant Expert Certification from Renewable Energy Institute</li>
-  <li>Engineering Leadership Scholarship issued by the Royal Academy of Engineering</li>
-</ul>
-</div>
+  <div class="container">
+    <h2 class="section-title">Services & Accreditation</h2>
+
+    <!-- Two-column services list -->
+    <div class="services-columns">
+      <ul>
+        <li>Engineering design - Mech, structural, systems</li>
+        <li>Calculations</li>
+        <li>Systems modeling & data analysis</li>
+        <li>3D modeling</li>
+        <li>Drafting</li>
+        <li>FEA Linear and non-linear</li>
+        <li>Risk analysis and management</li>
+        <li>Assembly and installation planning and support</li>
+        <li>Certification support</li>
+      </ul>
+      <ul>
+        <li>Commissioning</li>
+        <li>Design validation</li>
+        <li>Prototype and build support</li>
+        <li>Design for Manufacture</li>
+        <li>Due diligence support</li>
+        <li>Test method development</li>
+        <li>Cost modeling</li>
+        <li>Grant application support</li>
+        <li>Technology roadmapping and engineering strategy</li>
+        <li style="margin-bottom:50px;">IP Management</li>
+      </ul>
+    </div>
+
+    <!-- Single-column accreditations list -->
+    <ul class="accreditations">
+      <li>2x Chartered Engineers with 20+ years of experience</li>
+      <li>Hydrogen Energy Consultant Expert Certification from Renewable Energy Institute</li>
+      <li>Engineering Leadership Scholarship issued by the Royal Academy of Engineering</li>
+    </ul>
+  </div>
 </section>
+
 
 <section id="contact">
 <a href="mailto:jacktrevail@hotmail.co.uk" class="email-button">Email Us</a>
