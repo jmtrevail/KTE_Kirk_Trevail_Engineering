@@ -223,20 +223,25 @@ h2.section-title {
 #services-accreditation {
   background-color: #f5f5f5;
   padding: 80px 20px;
+  width: 100%;
   text-align: center;
 }
 
 #services-accreditation ul {
   list-style: none;
   padding: 0;
-  margin: 20px auto;
-  max-width: 100%;
+  margin: 40px auto;
+  max-width: 900px;
+  column-count: 2;         /* ✅ Split into 2 columns */
+  column-gap: 60px;        /* space between columns */
+  text-align: left;        /* aligns list items neatly */
 }
 
 #services-accreditation li {
   margin-bottom: 12px;
   font-size: 1.1em;
   line-height: 1.6;
+  break-inside: avoid;     /* ✅ keeps list items together if they wrap */
 }
 
 /* CONTACT SECTION */
