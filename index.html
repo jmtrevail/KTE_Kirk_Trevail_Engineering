@@ -300,23 +300,15 @@ h2.section-title {
   background-color: #FD9A62;
 }
 
+/* LinkedIn Icon */
 .linkedin-icon {
-  display: inline-block;
-  margin-top: 20px;
-}
-
-.linkedin-icon img {
-  width: 40px;
-  height: 40px;
-  filter: brightness(0) invert(1); /* pure white */
-  transition: filter 0.3s ease;
-}
-
-.linkedin-icon:hover img {
-  filter: none; /* removes white filter */
+  margin-top: 25px; /* space below the button */
+  display: flex;
+  justify-content: center; /* centers horizontally */
 }
 
 .linkedin-svg {
+  fill: white;
   transition: fill 0.3s ease;
 }
 
@@ -452,16 +444,10 @@ footer {
 
 
 <section id="contact">
-<a href="mailto:jacktrevail@hotmail.co.uk" class="email-button">Email Us</a>
- <!-- ✅ LinkedIn icon here -->
-    <a href="https://www.linkedin.com/in/jack-trevail-5591b1110/" 
-       target="_blank" 
-       class="linkedin-icon" 
-       aria-label="LinkedIn Profile">
-      <svg xmlns="http://www.w3.org/2000/svg" 
-           width="40" height="40" viewBox="0 0 24 24" 
-           fill="white" 
-           class="linkedin-svg">
+  <a href="mailto:jacktrevail@hotmail.co.uk" class="email-button">Email Us</a>
+  <div class="linkedin-icon">
+    <a href="https://www.linkedin.com/in/jack-trevail-5591b1110/" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="white" class="linkedin-svg">
         <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 
                  0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268
                  c-.966 0-1.75-.792-1.75-1.732s.784-1.732 1.75-1.732 1.75.792 
@@ -469,7 +455,8 @@ footer {
                  0-2.149 1.455-2.149 2.958v5.704h-3v-10h2.879v1.367h.041c.401-.757
                  1.379-1.554 2.841-1.554 3.04 0 3.6 2.003 3.6 4.609v5.578z"/>
       </svg>
-</a>
+    </a>
+  </div>
 </section>
 
 <footer>
