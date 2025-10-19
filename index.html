@@ -230,7 +230,7 @@ h2.section-title {
   list-style: none;
   padding: 0;
   margin: 20px auto;
-  max-width: 600px;
+  max-width: 100%;
 }
 
 #services-accreditation li {
@@ -265,12 +265,12 @@ h2.section-title {
   width: 40px;
   height: 40px;
   margin-top: 20px;
-  filter: brightness(0) invert(1);
-  transition: transform 0.3s ease;
+  filter: brightness(0) invert(1);  /* default white */
+  transition: filter 0.3s ease;
 }
 
 .linkedin-icon img:hover {
-  transform: scale(1.15);
+  filter: invert(61%) sepia(90%) saturate(5717%) hue-rotate(8deg) brightness(100%) contrast(101%);
 }
 
 /* FOOTER */
@@ -371,8 +371,8 @@ footer {
   <li>Offshore</li>
   <li>Space</li>
   <li>Product Development</li>
-  <li>Startup Support</li>
-  <li style="margin-bottom:30px;">2x Chartered Engineers with 20+ years of experience</li>
+  <li style="margin-bottom:50px;">Startup Support</li>
+  <li>2x Chartered Engineers with 20+ years of experience</li>
   <li>Hydrogen Energy Consultant Expert Certification from Renewable Energy Institute</li>
   <li>Engineering Leadership Scholarship issued by the Royal Academy of Engineering</li>
 </ul>
