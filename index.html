@@ -43,7 +43,7 @@ h2.section-title { text-align: center; margin-bottom: 40px; font-size: 2em; colo
 .service:hover { background: #e0f7fa; }
 .bios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
 .bio { background: #f5f5f5; padding: 20px; border-radius: 10px; }
-.bio img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; }
+.bio img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: center top; margin-bottom: 15px; }
 #contact {
   background-color: #f9f9f9;  /* or whatever color you’ve chosen */
   text-align: center;         /* centers all text and buttons */
@@ -131,6 +131,18 @@ section {
 /* CONTACT section */
 #contact {
   background-color: #f9f9f9; /* soft off-white */
+}
+
+.linkedin-icon img {
+  width: 40px;
+  height: 40px;
+  margin-top: 20px;
+  filter: invert(41%) sepia(98%) saturate(2774%) hue-rotate(184deg) brightness(94%) contrast(101%);
+  transition: transform 0.3s ease;
+}
+
+.linkedin-icon img:hover {
+  transform: scale(1.15);
 }
   
 </style>
@@ -223,6 +235,10 @@ section {
   <h2>Get in Touch</h2>
   <p>We’d love to hear from you! Click below to send us an email.</p>
   <a href="mailto:jacktrevail@hotmail.co.uk" class="email-button">Email Us</a>
+  <br>
+  <a href="https://www.linkedin.com/in/jack-trevail-5591b1110/" target="_blank" class="linkedin-icon">
+    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
+  </a>
 </section>
 
 <footer>
