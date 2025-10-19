@@ -5,16 +5,71 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>KTE | Kirk Trevail Engineering</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; font-family: Arial, Helvetica, sans-serif; }
-body { color: #333; background-color: #fff; line-height: 1.6; }
-a { text-decoration: none; color: inherit; }
-header { position: fixed; top: 0; left: 0; width: 100%; background: #0C0508; color: #fff; padding: 15px 0; z-index: 1000; }
-.container { width: 90%; max-width: 1100px; margin: auto; }
-nav { display: flex; justify-content: space-between; align-items: center; }
-nav h1 { font-size: 1.5em; letter-spacing: 2px; }
-nav ul { list-style: none; display: flex; gap: 20px; }
-nav ul li a { color: #fff; transition: color 0.3s; }
-nav ul li a:hover { color: #FD9A62; }
+/* GLOBAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #0C0508;
+  color: #fff;
+  padding: 15px 0;
+  z-index: 1000;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  font-size: 1.5em;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #FD9A62;
+}
+
+/* HERO SECTION */
 #hero {
   height: 100vh;
   background: url('Forth_Bridges.jpg') center center/cover no-repeat;
@@ -24,33 +79,174 @@ nav ul li a:hover { color: #FD9A62; }
   color: white;
   text-align: center;
   padding: 200px 20px 0;
-  position: relative;
 }
 
-#hero div {
-  position: relative;
-  z-index: 2;
+#hero h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
 }
-#hero h2 { font-size: 3em; margin-bottom: 20px; } /* space between heading and paragraph */
-#hero p { font-size: 1.3em; margin-bottom: 30px; } /* space below paragraph before button */
-#hero a { background: #fff; color: #626A7D; padding: 10px 20px; border-radius: 25px; font-weight: bold; transition: 0.3s; }
-#hero a:hover { background: #FD9A62; color: #fff; }
-section { padding: 80px 0; }
-h2.section-title { text-align: center; margin-bottom: 40px; font-size: 2em; color: #626A7D; }
-#about .section-title {font-size: 1.5em; /* smaller heading */ margin-bottom: 30px; /* optional spacing adjustment */}
-#about p { max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.6em; line-height: 1.8; }
-.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
-.service { background: #626A7D; padding: 20px; border-radius: 10px; transition: 0.3s; }
-.service:hover { background: #e0f7fa; }
-.bios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
-.bio { background: #f5f5f5; padding: 20px; border-radius: 10px; }
-.bio img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; object-position: center 35%; margin-bottom: 15px; }
+
+#hero p {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+}
+
+#hero a {
+  background: #fff;
+  color: #626A7D;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+#hero a:hover {
+  background: #FD9A62;
+  color: #fff;
+}
+
+/* GENERAL SECTION STYLES */
+section {
+  width: 100%;
+  padding: 80px 20px;
+  scroll-margin-top: 90px;
+}
+
+h2.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2em;
+  color: #626A7D;
+}
+
+/* ABOUT */
+#about {
+  background-color: #FFFFFF;
+}
+
+#about .section-title {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+#about p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.6em;
+  line-height: 1.8;
+}
+
+/* ENGINEERING GRID */
+.engineering-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  padding: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.engineering-grid .engineering-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  height: 100%;
+}
+
+.engineering-grid .engineering-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.engineering-grid .engineering-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  background: #626A7D;
+  color: #ffffff;
+}
+
+.engineering-grid .engineering-text h3 {
+  margin-bottom: 15px;
+  font-size: 1.8em;
+}
+
+.engineering-grid .engineering-text p {
+  font-size: 1.3em;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .engineering-grid {
+    grid-template-columns: 1fr;
+  }
+  .engineering-grid .engineering-image,
+  .engineering-grid .engineering-text {
+    height: auto;
+  }
+}
+
+/* BIOS SECTION */
+#bios {
+  background-color: #FFFFFF;
+}
+
+.bios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.bio {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.bio img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 35%;
+  margin-bottom: 15px;
+}
+
+/* SERVICES & ACCREDITATION COMBINED */
+#services-accreditation {
+  background-color: #f5f5f5;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+#services-accreditation ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+#services-accreditation li {
+  margin-bottom: 12px;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* CONTACT SECTION */
 #contact {
-  background-color: #C6CCB2;  /* or whatever color you’ve chosen */
-  text-align: center;         /* centers all text and buttons */
+  background-color: #626A7D;
+  text-align: center;
   padding: 80px 20px;
 }
-  .email-button {
+
+.email-button {
   display: inline-block;
   background-color: #293649;
   color: white;
@@ -64,161 +260,38 @@ h2.section-title { text-align: center; margin-bottom: 40px; font-size: 2em; colo
 .email-button:hover {
   background-color: #FD9A62;
 }
-footer { background: #0C0508; color: #fff; text-align: center; padding: 20px; font-size: 0.9em; }
-@media (max-width: 768px) { nav ul { display: none; } }
-/* small list styling for added sections */
-#services-list ul, #accreditation ul { max-width: 800px; margin: 0 auto; list-style: disc; padding-left: 20px; font-size: 1.05em; }
-#services-list li, #accreditation li { margin: 8px 0; }
-/* prevent header overlap for anchor links */
-section { scroll-margin-top: 90px; }
-
-  /* General section styling */
-section {
-  width: 100%;
-  padding: 80px 20px;
-}
-
-/* ABOUT section */
-#about {
-  background-color: #FFFFFF; /* light gray */
-}
-
-.engineering-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* equal width columns */
-  gap: 0; /* no horizontal gap if you want images touching text */
-  align-items: stretch; /* stretch children to full height */
-  padding: 40px;          /* optional padding inside grid */
-  border-radius: 20px;    /* softens the corners */
-  overflow: hidden;       /* ensures images respect the rounded corners */
-}
-
-.engineering-grid .engineering-image {
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  height: 100%; /* stretch to full height of grid row */
-}
-
-.engineering-grid .engineering-image img {
-  width: 100%;      /* fill the column width */
-  height: 100%;     /* fill the column height */
-  object-fit: cover; /* crop to fill without distortion */
-  border-radius: 0;  /* remove rounded edges */
-}
-
-.engineering-grid .engineering-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* vertical centering */
-  text-align: center;      /* center the text inside its box */
-  padding: 40px;           /* optional spacing inside text box */
-  background: #626A7D;
-  color: #fffff; /* text colour white */
-}
-
-.engineering-text p {
-  font-size: 1.3em;
-  line-height: 1.6;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .engineering-grid {
-    grid-template-columns: 1fr; /* stack vertically on mobile */
-  }
-  .engineering-grid .engineering-image,
-  .engineering-grid .engineering-text {
-    height: auto; /* remove fixed height on stacked layout */
-  }
-}
-
-/* SERVICES section */
-#service-list {
-  background-color: #C6CCB2; 
-  padding: 80px 20px;
-  text-align: left; /* keep text left-aligned */
-}
-
-#services-list ul {
-  list-style: none;  /* remove bullets */
-  padding-left: 0;
-  margin: 30px auto;
-  max-width: 600px;
-  text-align: left;
-}
-
-#services-list li {
-  margin-bottom: 12px;
-  font-size: 1.1em;
-  line-height: 1.6;
-}
-
-/* BIOS section */
-#bios {
-  background-color: #FFFFFF; /* very light blue */
-}
-
-  /* BIOS section */
-#accreditation {
-  background-color: #FFFFFF; /* very light blue */
-  padding: 80px 20px;
-  text-align: center; /* center text */
-}
-
-#accreditation ul {
-  list-style: none;
-  padding: 0;
-  margin: 30px auto;
-  display: inline-block;
-  text-align: center; /* corrected from 'centre' */
-}
-
-#accreditation li {
-  margin-bottom: 10px;
-  font-size: 1.1em;
-}
-
-#services-accreditation {
-  background-color: #f5f5f5; /* single background color */
-  padding: 80px 20px;
-  width: 100%;
-  text-align: center;          /* centers heading and list */
-}
-
-#services-accreditation ul {
-  list-style: none;           /* removes bullets */
-  padding: 0;
-  margin: 20px auto;
-  max-width: 600px;
-}
-
-#services-accreditation li {
-  margin-bottom: 12px;
-  font-size: 1.1em;
-  line-height: 1.6;
-}
-
-/* CONTACT section */
-#contact {
-  background-color: #626A7D; /* soft off-white */
-}
 
 .linkedin-icon img {
   width: 40px;
   height: 40px;
   margin-top: 20px;
-  filter: brightness(0) invert(1);  /* makes the icon white */
+  filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
 }
 
 .linkedin-icon img:hover {
   transform: scale(1.15);
 }
-  
+
+/* FOOTER */
+footer {
+  background: #0C0508;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+}
+
+/* RESPONSIVE NAV */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+  }
+}
 </style>
 </head>
 <body>
+
 <header>
 <div class="container">
 <nav>
@@ -226,7 +299,7 @@ section {
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#bios">Team</a></li>
-<li><a href="#services-list">Services</a></li>
+<li><a href="#services-accreditation">Services & Accreditation</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -244,13 +317,12 @@ section {
 <section id="about">
 <div class="container">
 <h2 class="section-title">Energy Storage - Renewables - Hydrogen - Infrastructure - Heavy Lifting - Offshore - Space - Product - Startup support</h2>
-<p>With expertise in off and on-shore energy, space, construction and product development, we bring a track record of advanced innovation coupled with practical delivery. From feasibility to de-commissioning, we span the full life-cycle of engineering development, to turn ideas and projects into reality. </p>
+<p>With expertise in off and on-shore energy, space, construction and product development, we bring a track record of advanced innovation coupled with practical delivery. From feasibility to de-commissioning, we span the full life-cycle of engineering development, to turn ideas and projects into reality.</p>
 </div>
 </section>
 
 <section id="engineering">
   <div class="engineering-grid">
-    <!-- Top row: text right, image left -->
     <div class="engineering-image">
       <img src="Steven_mine.png" alt="Engineering Image 1">
     </div>
@@ -259,7 +331,6 @@ section {
       <p>At KTE, we provide practical and innovative engineering design and analysis to manage risk and deliver optimal solutions that balance performance, sustainability and cost. With over 20 years of experience in mechanical, structural, and systems engineering, we bring strong technical, quality, and compliance expertise to a diverse client base.</p>
     </div>
     
-    <!-- Bottom row: text left, image right -->
     <div class="engineering-text">
       <h3>Early stage technology acceleration</h3>
       <p>Our experience in navigating uncertainty in technology development enables us to bring clarity and development focus where no standards or existing designs exist. We partner with our clients, working with efficiency and transparency, to keep technology pushing forwards to commercialisation.</p>
@@ -274,45 +345,51 @@ section {
 <div class="container">
 <h2 class="section-title">Meet the Team</h2>
 <div class="bios">
-        <div class="bio"><img src="SK.jpg" alt="Team Member"><h3>Steven Kirk CEng</h3><p>Steven is a seasoned engineer with a proven track record in delivering innovative design and analysis solutions across complex engineering challenges. Having played critical roles in offshore wind, energy storage and construction projects, he helps clients navigate technical complexity with confidence and precision. His history of technology development include leading the mechanical design of the world’s first gravitational energy storage system and the mechanical and structural design of Scotland’s first satellite, UKube-1. Whether supporting early-stage product development or providing in-depth structural analysis, Steven offers a rare combination of technical depth, practical insight, and team leadership that drives projects forward.</p></div>
-        <div class="bio"><img src="JT.jpg" alt="Team Member"><h3>Jack Trevail CEng</h3><p>Jack brings creativity and innovation to engineering, with a passion for developing meaningful ideas and concepts into robust proven technology. He thrives on solving complex multidisciplinary engineering challenges, and has sustained high performance delivery technical projects across a range of sectors throughout the engineering development process, from concept generation to in-production optimisation. From consumer products at Dyson, award winning flight simulator design for Rolls-Royce, to hydrogen storage at Gravitricity, he brings a range of expertise, driven to enact change through engineering.</p></div>
+  <div class="bio">
+    <img src="SK.jpg" alt="Team Member">
+    <h3>Steven Kirk CEng</h3>
+    <p>Steven is a seasoned engineer with a proven track record in delivering innovative design and analysis solutions across complex engineering challenges. Having played critical roles in offshore wind, energy storage and construction projects, he helps clients navigate technical complexity with confidence and precision.</p>
+  </div>
+  <div class="bio">
+    <img src="JT.jpg" alt="Team Member">
+    <h3>Jack Trevail CEng</h3>
+    <p>Jack brings creativity and innovation to engineering, with a passion for developing meaningful ideas and concepts into robust proven technology. He thrives on solving complex multidisciplinary engineering challenges and delivering high performance technical projects across a range of sectors.</p>
+  </div>
 </div>
 </div>
 </section>
 
 <section id="services-accreditation">
-  <div class="container">
-    <h2 class="section-title">Services & Accreditation</h2>
-    <ul>
-      <!-- Services -->
-      <li>Energy Storage</li>
-      <li>Renewables</li>
-      <li>Hydrogen</li>
-      <li>Infrastructure</li>
-      <li>Heavy Lifting</li>
-      <li>Offshore</li>
-      <li>Space</li>
-      <li>Product Development</li>
-      <li>Startup Support</li>
-
-      <!-- Accreditation -->
-      <li style="margin-bottom: 30px;">2x Chartered Engineers with 20+ years of experience</li>
-      <li>Hydrogen Energy Consultant Expert Certification from Renewable Energy Institute</li>
-      <li>Engineering Leadership Scholarship issued by the Royal Academy of Engineering</li>
-    </ul>
-  </div>
+<div class="container">
+<h2 class="section-title">Services & Accreditation</h2>
+<ul>
+  <li>Energy Storage</li>
+  <li>Renewables</li>
+  <li>Hydrogen</li>
+  <li>Infrastructure</li>
+  <li>Heavy Lifting</li>
+  <li>Offshore</li>
+  <li>Space</li>
+  <li>Product Development</li>
+  <li>Startup Support</li>
+  <li style="margin-bottom:30px;">2x Chartered Engineers with 20+ years of experience</li>
+  <li>Hydrogen Energy Consultant Expert Certification from Renewable Energy Institute</li>
+  <li>Engineering Leadership Scholarship issued by the Royal Academy of Engineering</li>
+</ul>
+</div>
 </section>
 
 <section id="contact">
-  <a href="mailto:jacktrevail@hotmail.co.uk" class="email-button">Email Us</a>
-  <br>
-  <a href="https://www.linkedin.com/in/jack-trevail-5591b1110/" target="_blank" class="linkedin-icon">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
-  </a>
+<a href="mailto:jacktrevail@hotmail.co.uk" class="email-button">Email Us</a>
+<br>
+<a href="https://www.linkedin.com/in/jack-trevail-5591b1110/" target="_blank" class="linkedin-icon">
+<img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
+</a>
 </section>
 
 <footer>
 <p>&copy; 2025 KTE. All rights reserved.</p>
 </footer>
+
 </body>
 </html>
