@@ -44,10 +44,20 @@ h2.section-title { text-align: center; margin-bottom: 40px; font-size: 2em; colo
 .bios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
 .bio { background: #f5f5f5; padding: 20px; border-radius: 10px; }
 .bio img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; }
-#contact form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-#contact input, #contact textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 1em; }
-#contact button { padding: 10px; background: #007b9e; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 1em; transition: 0.3s; }
-#contact button:hover { background: #00bcd4; }
+.email-button {
+  display: inline-block;
+  background-color: #00bcd4;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.email-button:hover {
+  background-color: #009cb3;
+}
 footer { background: #111; color: #fff; text-align: center; padding: 20px; font-size: 0.9em; }
 @media (max-width: 768px) { nav ul { display: none; } }
 /* small list styling for added sections */
@@ -74,6 +84,11 @@ section {
 
 /* BIOS section */
 #bios {
+  background-color: #e8f4fa; /* very light blue */
+}
+
+  /* BIOS section */
+#accreditation {
   background-color: #e8f4fa; /* very light blue */
 }
 
@@ -169,15 +184,9 @@ section {
 </section>
 
 <section id="contact">
-<div class="container">
-<h2 class="section-title">Get in Touch</h2>
-<form>
-<input type="text" placeholder="Your Name" required />
-<input type="email" placeholder="Your Email" required />
-<textarea placeholder="Your Message" rows="5" required></textarea>
-<button type="submit">Send Message</button>
-</form>
-</div>
+  <h2>Get in Touch</h2>
+  <p>We’d love to hear from you! Click below to send us an email.</p>
+  <a href="mailto:jacktrevail@hotmail.co.uk" class="email-button">Email Us</a>
 </section>
 
 <footer>
