@@ -84,7 +84,7 @@ section {
 
 .engineering-grid {
   display: grid;
-  grid-template-columns: repeat(1fr, 1fr);
+  grid-template-columns: 1fr 1fr; /* equal column widths */
   gap: 40px;
   align-items: center;
   padding: 80px 20px;
@@ -92,20 +92,20 @@ section {
 
 .engineering-grid .engineering-image {
   display: flex;
-  justify-content: center; /* centers image within the column */
+  justify-content: center; /* center image horizontally in column */
 }
 
 .engineering-grid .engineering-image img {
-  width: 80%; /* your adjusted image width */
+  width: 80%; 
   border-radius: 10px;
   object-fit: cover;
 }
 
 .engineering-grid .engineering-text {
-  text-align: center; /* center the text inside the text block */
+  text-align: center; /* center the text */
   display: flex;
   flex-direction: column;
-  justify-content: center; /* vertical centering in the column */
+  justify-content: center; /* vertical centering */
 }
 
 .engineering-text h3 {
@@ -137,15 +137,15 @@ section {
   text-align: left; /* keep text left-aligned */
 }
 
-#services ul {
-  list-style-type: none;  
+#services-list ul {
   list-style: none;  /* remove bullets */
-  padding: 0;
+  padding-left: 0;
   margin: 30px auto;
-  max-width: 600px;  /* keeps it readable on wide screens */
+  max-width: 600px;
+  text-align: left;
 }
 
-#services li {
+#services-list li {
   margin-bottom: 12px;
   font-size: 1.1em;
   line-height: 1.6;
@@ -164,11 +164,11 @@ section {
 }
 
 #accreditation ul {
-  list-style: none; /* remove bullets */
+  list-style: none;
   padding: 0;
   margin: 30px auto;
-  display: inline-block; /* keeps list items centered together */
-  text-align: centre; /* aligns list text itself nicely when centered */
+  display: inline-block;
+  text-align: center; /* corrected from 'centre' */
 }
 
 #accreditation li {
@@ -230,23 +230,22 @@ section {
 
 <section id="engineering">
   <div class="engineering-grid">
-    <!-- Top row -->
+    <!-- Top row: text right, image left -->
+    <div class="engineering-image">
+      <img src="Steven_mine.png" alt="Engineering Image 1">
+    </div>
     <div class="engineering-text">
       <h3>End-to-end engineering design and project delivery</h3>
       <p>At KTE, we provide practical and innovative engineering design and analysis to manage risk and deliver optimal solutions that balance performance, sustainability and cost. With over 20 years of experience in mechanical, structural, and systems engineering, we bring strong technical, quality, and compliance expertise to a diverse client base.</p>
     </div>
-      <div class="engineering-image">
-        <img src="Steven_mine.png" alt="Engineering Image 1">
-    </div>
     
-    <!-- Bottom row -->
+    <!-- Bottom row: text left, image right -->
+    <div class="engineering-text">
+      <h3>Early stage technology acceleration</h3>
+      <p>Our experience in navigating uncertainty in technology development enables us to bring clarity and development focus where no standards or existing designs exist. We partner with our clients, working with efficiency and transparency, to keep technology pushing forwards to commercialisation.</p>
+    </div>
     <div class="engineering-image">
       <img src="mining.jpg" alt="Engineering Image 2">
-    </div>
-      <div class="engineering-text">
-        <h3>Early stage technology acceleration</h3>
-        <p>Our experience in navigating uncertainty in technology development enables us to bring clarity and development focus where no standards or existing designs exist. We partner with our clients, working with efficiency and transparency, to keep  technology pushing forwards to commercialisation.</p>
-  
     </div>
   </div>
 </section>
