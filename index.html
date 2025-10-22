@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KTE | Kirk Trevail Engineering</title>
-
+  
   <style>
     /* Your CSS goes here */
     html, body {
@@ -36,6 +36,10 @@ body {
   color: #333;
   background-color: #fff;
   line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -154,6 +158,15 @@ h2.section-title {
   color: #626A7D;
 }
 
+/* GLOBAL CONTAINER - shared width + centering for consistent alignment */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto; /* centers all section content */
+  padding: 0;     /* ensures no side offset */
+  box-sizing: border-box;
+}
+
 /* ABOUT */
 #about {
   background: linear-gradient(to bottom, #00162B 6%, #000B14 100%); /* white → light grey */
@@ -204,33 +217,23 @@ h2.section-title {
 }
 
 
-/* ENGINEERING SECTION */
+/* === ENGINEERING SECTION === */
 #engineering {
-  background-color: white;
-  padding: 140px 0 0px 0;
+  background: linear-gradient(to right, #2f3b4b, #6880A1); /* gradient across full width */
+  padding: 0; /* remove all top/bottom spacing */
+  margin: 0; /* ensure no inherited margins */
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
-/* ENGINEERING GRID */
 .engineering-grid {
-  width: 90%;
-  max-width: 1100px;
+  width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 350px;
+  grid-auto-rows: 450px;
   gap: 0;
   overflow: hidden;
-  background: linear-gradient(to right, #3D4C61, #6880A1);
-}
-  
-.engineering-grid > .engineering-text:first-of-type {
-  position: relative; /* needed for clip-path */
-  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
 }
 
-/* IMAGE AND TEXT BLOCKS */
 .engineering-grid .engineering-image,
 .engineering-grid .engineering-text {
   width: 100%;
@@ -242,7 +245,6 @@ h2.section-title {
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 0;
 }
 
 .engineering-grid .engineering-text {
@@ -251,9 +253,10 @@ h2.section-title {
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 90%;
+  width: 80%; /* narrower for readability */
   margin: 0 auto;
   color: #ffffff;
+  padding: 20px;
 }
 
 .engineering-grid .engineering-text h3 {
@@ -266,19 +269,35 @@ h2.section-title {
   line-height: 1.6;
 }
 
-/* RESPONSIVE ADJUSTMENTS */
 @media (max-width: 768px) {
   .engineering-grid {
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
-    clip-path: none; /* remove angle on mobile */
   }
 
-  .engineering-grid .engineering-image,
   .engineering-grid .engineering-text {
-    height: auto;
+    width: 90%;
   }
 }
+
+/* Add horizontal line between rows */
+.engineering-grid {
+  position: relative; /* needed for pseudo-element */
+}
+
+/* Use a pseudo-element to draw the line */
+.engineering-grid::after {
+  content: "";
+  position: absolute;
+  top: 50%;          /* middle of the grid */
+  left: 0;
+  width: 100%;
+  height: 4px;       /* thickness of the line */
+  background-color: #FD9A62; /* orange */
+  transform: translateY(-50%); /* center line exactly */
+  z-index: 10;
+}
+
 
 
 
@@ -292,10 +311,11 @@ h2.section-title {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
   text-align: center;
+  margin-bottom: 50px;
 }
 
 .bio {
-  background: #f5f5f5;
+  background: #ccd5e0;
   padding: 20px;
   border-radius: 10px;
 }
@@ -307,6 +327,24 @@ h2.section-title {
   object-fit: cover;
   object-position: center 35%;
   margin-bottom: 15px;
+}
+
+/* Orange line between name and paragraph in bio */
+.bio h3 {
+  position: relative;
+  padding-bottom: 0px; /* space between text and line */
+  margin-bottom: 0px;  /* space before paragraph */
+}
+
+.bio h3::after {
+  content: "";
+  display: block;
+  width: 100px;               /* line length */
+  border: none;              
+  height: 2px;               /* line thickness */
+  background-color: #FD9A62; /* line color (or any accent) */
+  margin: 10px auto;         /* spacing above/below and center it */
+  border-radius: 1px;        /* slightly rounded edges */
 }
 
 /* SERVICES & ACCREDITATION COMBINED */
@@ -339,20 +377,47 @@ h2.section-title {
   white-space: nowrap; /* prevents wrapping onto two lines */
 }
 
-/* Single-column accreditations list */
-.accreditations {
-  list-style: none;
-  padding: 0;
+/* SERVICES TWO-COLUMN LAYOUT */
+.services-columns-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* align items to top */
+  gap: 40px;
+  position: relative;
+  max-width: 900px;
   margin: 0 auto;
-  max-width: 600px;
-  text-align: center;
 }
 
-.accreditations li {
-  font-size: 1.1em;
-  line-height: 1.6;
-  margin-bottom: 12px;
+/* Left and right column alignment */
+.left-column {
+  text-align: right;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
+
+.right-column {
+  text-align: left;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Vertical line exactly between columns, height = tallest column */
+.services-columns-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;               /* spans only content height */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background-color: #FD9A62;
+  border-radius: 1px;
+}
+
 
 /* Responsive tweak for mobile */
 @media (max-width: 768px) {
@@ -366,6 +431,32 @@ h2.section-title {
     text-align: center;
   }
 }
+
+.left-column li,
+.right-column li {
+  line-height: 1.6; /* adjust value as needed */
+  margin-bottom: 12px; /* optional spacing between items */
+}
+
+/* ACCREDITATIONS LIST STYLING */
+.accreditations {
+  background-color: #FD9A62; /* orange background */
+  list-style: none;
+  padding: 40px 80px;        /* spacing inside the box */
+  margin: 30px auto 0 auto;  /* center horizontally */
+  max-width: 600px;
+  text-align: center;
+  border-radius: 10px;       /* optional rounded corners */
+    margin-bottom: 40px;
+}
+
+.accreditations li {
+  font-size: 1.1em;
+  line-height: 2;
+  margin-bottom: 12px;
+  color: #ffffff;            /* white text for contrast */
+}
+
 
 
 /* CONTACT SECTION */
@@ -488,8 +579,8 @@ footer {
       <p>Our experience in navigating uncertainty in technology development enables us to bring clarity and development focus where no standards or existing designs exist. We partner with our clients, working with efficiency and transparency, to keep technology pushing forwards to commercialisation.</p>
     </div>
     <div class="engineering-image">
-      <img src="mining.jpg" alt="Engineering Image 2">
-    </div>
+      <img src="Steven_office.jpg" alt="Engineering Image 2">
+    <div>
   </div>
 </section>
 
@@ -515,32 +606,31 @@ footer {
   <div class="container">
     <h2 class="section-title">Services & Accreditation</h2>
 
-    <!-- Two-column services list -->
-    <div class="services-columns">
-      <ul>
-        <li>Engineering design - Mech, structural, systems</li>
-        <li>Calculations</li>
-        <li>Systems modeling & data analysis</li>
-        <li>3D modeling</li>
-        <li>Drafting</li>
-        <li>FEA Linear and non-linear</li>
-        <li>Risk analysis and management</li>
-        <li>Assembly and installation planning and support</li>
-        <li>Certification support</li>
-      </ul>
-      <ul>
-        <li>Commissioning</li>
-        <li>Design validation</li>
-        <li>Prototype and build support</li>
-        <li>Design for Manufacture</li>
-        <li>Due diligence support</li>
-        <li>Test method development</li>
-        <li>Cost modeling</li>
-        <li>Grant application support</li>
-        <li>Technology roadmapping and engineering strategy</li>
-        <li style="margin-bottom:50px;">IP Management</li>
-      </ul>
-    </div>
+<div class="services-columns-wrapper">
+  <ul class="left-column">
+    <li>Engineering design - Mech, structural, systems</li>
+    <li>Calculations</li>
+    <li>Systems modeling & data analysis</li>
+    <li>3D modeling and Drafting</li>
+    <li>Commissioning</li>
+    <li>FEA Linear and non-linear</li>
+    <li>Risk analysis and management</li>
+    <li>Assembly and installation planning and support</li>
+    <li>Certification support</li>
+  </ul>
+  
+  <ul class="right-column">
+    <li>Design validation</li>
+    <li>Prototype and build support</li>
+    <li>Design for Manufacture</li>
+    <li>Due diligence support</li>
+    <li>Test method development</li>
+    <li>Cost modeling</li>
+    <li>Grant application support</li>
+    <li>Technology roadmapping and engineering strategy</li>
+    <li>IP Management</li>
+  </ul>
+</div>
 
     <!-- Single-column accreditations list -->
     <ul class="accreditations">
