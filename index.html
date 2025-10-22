@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KTE | Kirk Trevail Engineering</title>
+
+  <style>
+    /* Your CSS goes here */
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      font-family: 'Segoe UI Light', 'Segoe UI', 'Segoe', sans-serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+h1, h2, h3 {
+  font-family: 'Segoe UI Semibold', 'Segoe UI', 'Segoe', sans-serif; /* headings */
+}
+  </style>
+
+</head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>KTE | Kirk Trevail Engineering</title>
 <style>
+
+  
 /* GLOBAL STYLES */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: Arial, Helvetica, sans-serif;
-}
+
 
 body {
   color: #333;
@@ -23,6 +41,19 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+/* Make KTE clickable and styled like before */
+.logo {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #FD9A62; /* same orange as your hover accent */
 }
 
 /* HEADER */
@@ -69,16 +100,20 @@ nav ul li a:hover {
   color: #FD9A62;
 }
 
-/* HERO SECTION */
 #hero {
   height: 100vh;
-  background: url('Forth_Bridges.jpg') center center/cover no-repeat;
+  background: 
+    linear-gradient(to bottom,
+      rgba(0, 0, 0, 0) 60%,    /* transparent for most of the image */
+      #00162B 100%),            /* finish in light grey to match About */
+    url('Forth_Bridges.jpg') center center/cover no-repeat;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 200px 20px 0;
+  position: relative;
 }
 
 #hero h2 {
@@ -121,37 +156,84 @@ h2.section-title {
 
 /* ABOUT */
 #about {
-  background-color: #FFFFFF;
+  background: linear-gradient(to bottom, #00162B 6%, #000B14 100%); /* white → light grey */
 }
 
+
 #about .section-title {
-  font-size: 1.5em;
-  margin-bottom: 30px;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 #about p {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  font-size: 1.6em;
-  line-height: 1.8;
+  font-size: 1.3em;
+  line-height: 2;
+  margin-top: 60px;
+  margin-bottom: 80px;
+}
+
+#about h2,
+#about p {
+  color: #BABECA;
+}
+
+.about-separator {
+  width: 100px;               /* line length */
+  border: none;              
+  height: 2px;               /* line thickness */
+  background-color: #FD9A62; /* line color (or any accent) */
+  margin: 50px auto;         /* spacing above/below and center it */
+  border-radius: 1px;        /* slightly rounded edges */
+}
+
+
+.bullet {
+  color: #FD9A62;  /* accent color for bullets */
+  margin: 0 5px;   /* space around the bullet */
+}
+
+#about {
+  position: relative;
+  background-color: #0C0508; /* Oxford Blue */
+  padding: 60px 20px;
+  color: white;
+  /*clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);*/
+}
+
+
+/* ENGINEERING SECTION */
+#engineering {
+  background-color: white;
+  padding: 140px 0 0px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 /* ENGINEERING GRID */
 .engineering-grid {
+  width: 90%;
+  max-width: 1100px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 350px;
   gap: 0;
-  align-items: stretch;
-  padding: 40px;
-  border-radius: 20px;
   overflow: hidden;
+  background: linear-gradient(to right, #3D4C61, #6880A1);
+}
+  
+.engineering-grid > .engineering-text:first-of-type {
+  position: relative; /* needed for clip-path */
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
 }
 
-.engineering-grid .engineering-image {
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
+/* IMAGE AND TEXT BLOCKS */
+.engineering-grid .engineering-image,
+.engineering-grid .engineering-text {
+  width: 100%;
   height: 100%;
 }
 
@@ -159,6 +241,7 @@ h2.section-title {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   border-radius: 0;
 }
 
@@ -166,31 +249,38 @@ h2.section-title {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 40px;
-  background: #626A7D;
+  width: 90%;
+  margin: 0 auto;
   color: #ffffff;
 }
 
 .engineering-grid .engineering-text h3 {
+  font-size: 1.4em;
   margin-bottom: 15px;
-  font-size: 1.8em;
 }
 
 .engineering-grid .engineering-text p {
-  font-size: 1.3em;
+  font-size: 1em;
   line-height: 1.6;
 }
 
+/* RESPONSIVE ADJUSTMENTS */
 @media (max-width: 768px) {
   .engineering-grid {
     grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    clip-path: none; /* remove angle on mobile */
   }
+
   .engineering-grid .engineering-image,
   .engineering-grid .engineering-text {
     height: auto;
   }
 }
+
+
 
 /* BIOS SECTION */
 #bios {
@@ -316,6 +406,15 @@ h2.section-title {
   fill: #FD9A62; /* exact orange hover color */
 }
 
+#contact {
+  position: relative;
+  background-color: #626A7D; /* Contact section background */
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0 100%);
+}
+
 /* FOOTER */
 footer {
   background: #0C0508;
@@ -338,11 +437,11 @@ footer {
 <header>
 <div class="container">
 <nav>
-<h1>KTE</h1>
+<h1><a href="#hero" class="logo">KTE</a></h1>
 <ul>
 <li><a href="#about">About</a></li>
 <li><a href="#bios">Team</a></li>
-<li><a href="#services-accreditation">Services & Accreditation</a></li>
+<li><a href="#services-accreditation">Services</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -358,16 +457,26 @@ footer {
 </section>
 
 <section id="about">
-<div class="container">
-<h2 class="section-title">Energy Storage - Renewables - Hydrogen - Infrastructure - Heavy Lifting - Offshore - Space - Product - Startup support</h2>
-<p>With expertise in off and on-shore energy, space, construction and product development, we bring a track record of advanced innovation coupled with practical delivery. From feasibility to de-commissioning, we span the full life-cycle of engineering development, to turn ideas and projects into reality.</p>
-</div>
+  <div class="container">
+    <div class="about-box">
+      <h2 class="section-title">
+        Energy Storage <span class="bullet">&bull;</span> Renewables <span class="bullet">&bull;</span> Hydrogen <span class="bullet">&bull;</span> Infrastructure
+      </h2>
+      <h2 class="section-title">
+        Heavy Lifting <span class="bullet">&bull;</span> Offshore <span class="bullet">&bull;</span> Space <span class="bullet">&bull;</span> Product <span class="bullet">&bull;</span> Startup support
+      </h2>
+        <hr class="about-separator"> <!-- horizontal line -->
+      <p>
+        With expertise in off and on-shore energy, space, construction and product development, we bring a track record of advanced innovation coupled with practical delivery. From feasibility to de-commissioning, we span the full life-cycle of engineering development, to turn ideas and projects into reality.
+      </p>
+    </div>
+  </div>
 </section>
 
 <section id="engineering">
   <div class="engineering-grid">
     <div class="engineering-image">
-      <img src="Steven_mine.png" alt="Engineering Image 1">
+      <img src="Steven_mine.jpg" alt="Engineering Image 1">
     </div>
     <div class="engineering-text">
       <h3>End-to-end engineering design and project delivery</h3>
