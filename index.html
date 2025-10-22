@@ -280,26 +280,6 @@ h2.section-title {
   }
 }
 
-/* Add horizontal line between rows */
-.engineering-grid {
-  position: relative; /* needed for pseudo-element */
-}
-
-/* Use a pseudo-element to draw the line */
-.engineering-grid::after {
-  content: "";
-  position: absolute;
-  top: 50%;          /* middle of the grid */
-  left: 0;
-  width: 100%;
-  height: 4px;       /* thickness of the line */
-  background-color: #FD9A62; /* orange */
-  transform: translateY(-50%); /* center line exactly */
-  z-index: 10;
-}
-
-
-
 
 /* BIOS SECTION */
 #bios {
